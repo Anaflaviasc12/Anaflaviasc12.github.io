@@ -1,3 +1,12 @@
+<?php
+    if (!isset($_SESSION)) {
+        session_start();
+    }
+    
+    if (!isset($_SESSION['id'])) {
+        header("Location:login.php");
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -11,14 +20,13 @@
       rel="stylesheet"
       integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
       crossorigin="anonymous">
-    </link>
   </head>
   <body>
 
     <nav class="navbar navbar-expand-lg text-light"  style="background-color:rgba(105, 10, 10, 0.74) ">
       <div class="container-fluid">
         <a class="navbar-brand" href="index.php">
-          <img src="images/Logo.PNG">
+          <img src="images/Logo.png">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
           data-bs-target="#navbarNavAltMarkup"
@@ -28,8 +36,12 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
           <div class="navbar-nav">
-            <a class="nav-link active" aria-current="page" href="index.php">Home</a>
-            <a class="nav-link" href="login.php">Login</a>
+            <a class="nav-link active" aria-current="page" href="logado.php">Home</a>
+            <a class="nav-link" href="região.php">Região</a>
+            <a class="nav-link" href="produtor.php">Produtor</a>
+            <a class="nav-link" href="vinho.php">Vinho</a>
+            <a class="nav-link" href="sair.php">Sair</a>
+
           </div>
         </div>
       </div>
@@ -305,8 +317,6 @@
   </div>
   <!-- Copyright -->
 </footer>
-
-
 
 
   </body>
